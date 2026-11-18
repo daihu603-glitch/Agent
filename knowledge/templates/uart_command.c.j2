@@ -1,0 +1,82 @@
+/**
+ * 串口命令解析框架 — 由嵌入式智能体自动生成
+ * 用法: 在 USART RX 中断中逐字节喂入 uart_cmd_feed()
+ */
+#include "main.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+#define CMD_BUF_SIZE  128
+static char cmd_buf[CMD_BUF_SIZE];
+static uint8_t cmd_idx = 0;
+
+/* 命令处理函数声明 */
+{% for cmd in commands %}
+static void cmd_{{ cmd }}(char *args);
+{% endfor %}
+
+/* 命令表 */
+typedef struct {
+    const char *name;
+    void (*handler)(char *args);
+} CmdEntry;
+
+static const CmdEntry cmd_table[] = {
+{% for cmd in commands %}
+    {"{{ cmd }}", cmd_{{ cmd }}},
+{% endfor %}
+    {NULL, NULL}
+};
+
+void uart_cmd_process(char *line)
+{
+    /* 跳过前导空格 */
+    while (*line == ' ') line++;
+    if (*line == '\0') return;
+
+    /* 分离命令名和参数 */
+    char *args = strchr(line, ' ');
+    if (args) {
+        *args = '\0';
+        args++;
+    }
+
+    for (const CmdEntry *e = cmd_table; e->name; e++) {
+        if (strcmp(line, e->name) == 0) {
+            e->handler(args ? args : "");
+            return;
+        }
+    }
+    printf("ERR: unknown command '%s'\r\n", line);
+}
+
+void uart_cmd_feed(uint8_t byte)
+{
+    if (byte == '\n' || byte == '\r') {
+        if (cmd_idx > 0) {
+            cmd_buf[cmd_idx] = '\0';
+            uart_cmd_process(cmd_buf);
+            cmd_idx = 0;
+        }
+    } else if (cmd_idx < CMD_BUF_SIZE - 1) {
+        cmd_buf[cmd_idx++] = (char)byte;
+    }
+}
+
+/* printf 重定向 */
+int fputc(int ch, FILE *f)
+{
+    HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 10);
+    return ch;
+}
+
+/* ========== 命令实现 ========== */
+{% for cmd in commands %}
+
+static void cmd_{{ cmd }}(char *args)
+{
+    /* TODO: 实现 {{ cmd }} 命令 */
+    printf("OK: {{ cmd }} executed (args: %s)\r\n", args);
+}
+{% endfor %}

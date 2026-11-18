@@ -1,0 +1,93 @@
+# STM32 Makefile — 由嵌入式智能体自动生成
+# 工具链: arm-none-eabi-gcc
+
+TARGET = {{ project }}
+MCU = {{ mcu }}
+
+# 工具链
+PREFIX = arm-none-eabi-
+CC = $(PREFIX)gcc
+AS = $(PREFIX)gcc -x assembler-with-cpp
+CP = $(PREFIX)objcopy
+SZ = $(PREFIX)size
+
+# MCU 标志
+{% if 'F103' in mcu %}
+CPU = -mcpu=cortex-m3
+FPU =
+FLOAT-ABI =
+{% elif 'F4' in mcu %}
+CPU = -mcpu=cortex-m4
+FPU = -mfpu=fpv4-sp-d16
+FLOAT-ABI = -mfloat-abi=hard
+{% else %}
+CPU = -mcpu=cortex-m3
+FPU =
+FLOAT-ABI =
+{% endif %}
+MCU_FLAGS = $(CPU) -mthumb $(FPU) $(FLOAT-ABI)
+
+# 编译标志
+C_DEFS = -DUSE_HAL_DRIVER -D{{ mcu }}
+C_INCLUDES = \
+  -ICore/Inc \
+  -IDrivers/STM32F1xx_HAL_Driver/Inc \
+  -IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy \
+  -IDrivers/CMSIS/Device/ST/STM32F1xx/Include \
+  -IDrivers/CMSIS/Include
+
+CFLAGS = $(MCU_FLAGS) $(C_DEFS) $(C_INCLUDES) -Wall -fdata-sections -ffunction-sections -Og -g -gdwarf-2
+ASFLAGS = $(MCU_FLAGS) -Wall -fdata-sections -ffunction-sections
+
+# 链接
+LDSCRIPT = STM32F103VETx_FLASH.ld
+LIBS = -lc -lm -lnosys
+LDFLAGS = $(MCU_FLAGS) -specs=nano.specs -T$(LDSCRIPT) $(LIBS) -Wl,-Map=$(TARGET).map,--cref -Wl,--gc-sections
+
+# 源文件
+C_SOURCES = \
+{% for src in sources %}
+  $(wildcard {{ src }}/*.c) \
+{% endfor %}
+  Core/Src/main.c \
+  Core/Src/stm32f1xx_it.c \
+  Core/Src/stm32f1xx_hal_msp.c
+
+ASM_SOURCES = startup_stm32f103xe.s
+
+# 构建规则
+OBJECTS = $(addprefix build/,$(notdir $(C_SOURCES:.c=.o)))
+OBJECTS += $(addprefix build/,$(notdir $(ASM_SOURCES:.s=.o)))
+vpath %.c $(sort $(dir $(C_SOURCES)))
+vpath %.s $(sort $(dir $(ASM_SOURCES)))
+
+all: build/$(TARGET).elf build/$(TARGET).hex build/$(TARGET).bin size
+
+build/%.o: %.c Makefile | build
+	$(CC) -c $(CFLAGS) -Wa,-a,-ad,-alms=build/$(notdir $(<:.c=.lst)) $< -o $@
+
+build/%.o: %.s Makefile | build
+	$(AS) -c $(ASFLAGS) $< -o $@
+
+build/$(TARGET).elf: $(OBJECTS) Makefile
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
+
+build/%.hex: build/%.elf
+	$(CP) -O ihex $< $@
+
+build/%.bin: build/%.elf
+	$(CP) -O binary -S $< $@
+
+size: build/$(TARGET).elf
+	$(SZ) $<
+
+build:
+	mkdir -p $@
+
+clean:
+	rm -rf build
+
+flash: build/$(TARGET).bin
+	STM32_Programmer_CLI -c port=SWD -w $< 0x08000000 -v -rst
+
+.PHONY: all clean size flash

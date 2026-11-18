@@ -1,0 +1,12 @@
+#ifndef {{ device | upper }}_H
+#define {{ device | upper }}_H
+
+#include "main.h"
+
+#define {{ device | upper }}_I2C_ADDR  {{ addr }}
+
+HAL_StatusTypeDef {{ device | lower }}_init(void);
+HAL_StatusTypeDef {{ device | lower }}_write(uint8_t reg, uint8_t *data, uint16_t len);
+HAL_StatusTypeDef {{ device | lower }}_read(uint8_t reg, uint8_t *data, uint16_t len);
+
+#endif /* {{ device | upper }}_H */

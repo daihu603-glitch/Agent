@@ -1,0 +1,27 @@
+{
+  "project": "ota_project",
+  "version": "1.0.0",
+  "target": "esp32s3",
+  "files": {
+    "app": {
+      "file": "app.bin",
+      "bytes": 3,
+      "sha256": "a172cedcae47474b615c54d510a5d84a8dea3032e958587430b413538be3f333"
+    },
+    "bootloader.bin": {
+      "file": "bootloader.bin",
+      "bytes": 4,
+      "sha256": "4509beb0ab401d71fa4a5cd94a55c9a74f13332776ae4019c5bfc4c2005157ff"
+    },
+    "partition-table.bin": {
+      "file": "partition-table.bin",
+      "bytes": 4,
+      "sha256": "37a680133bd09342f934afb8dd2c7d9e1b624da5f35e3a38adb103e37c055ed1"
+    },
+    "ota_data_initial.bin": {
+      "file": "ota_data_initial.bin",
+      "bytes": 3,
+      "sha256": "b08bcc8b8e779d1e6476417faa59ea2424e18bbfbbf5b44e6a047e8917cc6f8a"
+    }
+  }
+}

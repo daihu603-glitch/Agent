@@ -1,0 +1,56 @@
+{
+  "scope": "LOCAL_SIMULATION_NOT_DEVICE_OR_CUSTOMER_ACCEPTANCE",
+  "security": "ANONYMOUS_LOOPBACK_ONLY",
+  "endpoint": "opc.tcp://127.0.0.1:4840/agent/demo",
+  "started_at": "2026-11-10T11:49:56.051996+00:00",
+  "browse": [
+    {
+      "node_id": "i=31915",
+      "name": "Locations",
+      "class": "1"
+    },
+    {
+      "node_id": "i=2253",
+      "name": "Server",
+      "class": "1"
+    },
+    {
+      "node_id": "i=23470",
+      "name": "Aliases",
+      "class": "1"
+    },
+    {
+      "node_id": "ns=2;s=DemoDevice",
+      "name": "DemoDevice",
+      "class": "1"
+    }
+  ],
+  "initial_temperature": 20.0,
+  "setpoint_before": 20.0,
+  "setpoint_after": 25.5,
+  "subscription_changes": [
+    {
+      "node_id": "ns=2;s=Demo.Temperature",
+      "value": 20.0,
+      "recorded_at": "2026-11-10T11:49:56.089166+00:00"
+    },
+    {
+      "node_id": "ns=2;s=Demo.Temperature",
+      "value": 21.0,
+      "recorded_at": "2026-11-10T11:49:56.205475+00:00"
+    },
+    {
+      "node_id": "ns=2;s=Demo.Temperature",
+      "value": 22.0,
+      "recorded_at": "2026-11-10T11:49:56.404104+00:00"
+    }
+  ],
+  "checks": {
+    "browse": true,
+    "read": true,
+    "write_readback": true,
+    "subscription": true
+  },
+  "status": "PASS",
+  "finished_at": "2026-11-10T11:49:58.082756+00:00"
+}

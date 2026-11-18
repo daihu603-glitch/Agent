@@ -1,0 +1,25 @@
+{
+  "project_dir": "D:\\Agent\\workspace\\selftest\\ai_backend",
+  "created_at": "2026-11-10T11:49:54.036483+00:00",
+  "scanned_files": 1,
+  "counts": {
+    "critical": 1,
+    "high": 1,
+    "medium": 0
+  },
+  "findings": [
+    {
+      "file": "demo.py",
+      "line": 1,
+      "rule": "hardcoded_secret",
+      "severity": "critical"
+    },
+    {
+      "file": "demo.py",
+      "line": 2,
+      "rule": "shell_true",
+      "severity": "high"
+    }
+  ],
+  "limitations": "静态规则扫描不代表完整安全测试；不会验证密钥是否有效，也不会回显匹配内容。"
+}

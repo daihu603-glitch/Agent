@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "scope": "device",
+  "method": "hil_test",
+  "requirement_ids": [
+    "FR-001"
+  ],
+  "requirement_sha256": {
+    "FR-001": "5b2194c25ae2120c45d6f9ca6eb2abeaa016184e44cbb101ab56423e45f03030"
+  },
+  "source_sha256": {
+    "src/main.c": "e511fba54504d48e225c0ab3c8f2a2669e2abb2ef626ee0af162064740611659",
+    "@tree/main.c": "e511fba54504d48e225c0ab3c8f2a2669e2abb2ef626ee0af162064740611659"
+  },
+  "artifact_sha256": {
+    "firmware.bin": "5a154257d128f5eac4189268fe88cc2b38c4a452fa5eae521aea31d2d33cd7a9"
+  },
+  "reporter": "offline-selftest-fixture",
+  "run_id": "offline-unit-001",
+  "recorded_at": "2026-11-10T11:49:54.071188+00:00",
+  "checks": [
+    {
+      "name": "mock-version",
+      "status": "PASS"
+    }
+  ],
+  "identity": {
+    "device_id": "MOCK-NOT-A-REAL-DEVICE",
+    "source_revision": "mock-unit-1"
+  }
+}

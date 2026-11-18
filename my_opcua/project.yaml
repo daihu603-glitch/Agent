@@ -1,0 +1,7 @@
+# 项目档案示例。复制到 workspace/<project>/project.yaml 后按客户项目修改。
+project:
+  name: my-opcua-gateway
+  version: 0.1.0
+  platform: opc_ua
+  requirement_spec: requirements.yaml
+  source_dir: ""

@@ -1,0 +1,66 @@
+schema_version: 1
+project:
+  name: my-opcua-gateway
+  customer: ''
+  platform: opc_ua
+  requirement_baseline: 0.2.0
+baseline_status: draft_requires_customer_review
+requirements:
+- id: FR-001
+  title: 节点浏览读取与受控写回读
+  acceptance: 本地协议测试能浏览对象、读取温度并对授权 Double 节点确认写入回读，错误数为 0
+  method: bench_test
+  source: 平台模板；指标须经客户评审确认
+  priority: must
+  trace:
+    design:
+    - design.md
+    code:
+    - gateway.py
+    tests:
+    - test_gateway.py::test_browse_read_and_confirmed_write_readback
+- id: IF-001
+  title: 订阅与服务端重启恢复
+  acceptance: 订阅能收到新值；服务端重启后 8 秒内重连并恢复订阅，退出后会话和订阅均释放
+  method: bench_test
+  source: 平台模板；指标须经客户评审确认
+  priority: must
+  trace:
+    design:
+    - design.md
+    code:
+    - gateway.py
+    tests:
+    - test_gateway.py::test_subscription_receives_changes_and_releases_resources
+    - test_gateway.py::test_server_restart_reconnects_and_restores_subscription
+- id: SAFE-001
+  title: 白名单与异常参数保护
+  acceptance: 10 次越权写入全部拒绝且原值不变；未确认写入、无效节点、错误类型及远程端点均拒绝
+  method: bench_test
+  source: 平台模板；指标须经客户评审确认
+  priority: must
+  trace:
+    design:
+    - design.md
+    code:
+    - gateway.py
+    tests:
+    - test_gateway.py::test_10_unauthorized_writes_are_rejected_without_changes
+    - test_gateway.py::test_invalid_node_and_type_mismatch_fail
+    - test_gateway.py::test_remote_endpoint_is_rejected_before_connection
+- id: NFR-001
+  title: 持续运行与资源稳定性
+  acceptance: 在已确认的目标环境连续运行 24 小时，进程或固件崩溃数为 0，通信错误率不超过 0.1%，记录资源曲线
+  method: stress_test
+  source: 平台模板；指标须经客户评审确认
+  priority: must
+  trace:
+    design:
+    - design.md
+    code:
+    - gateway.py
+    tests:
+    - 未执行：24小时长稳与资源曲线
+change_requests:
+- id: CR-BASELINE-002
+  reason: 移除误复制的串口/舵机/MCU验收，替换为OPC UA协议需求；原文保存在improvement_backups；草案仍待客户评审

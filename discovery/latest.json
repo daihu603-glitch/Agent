@@ -1,0 +1,17 @@
+{
+  "scope": "READ_ONLY_DISCOVERY_NOT_DEVICE_VALIDATION",
+  "created_at": "2026-11-10T01:29:44.851185+00:00",
+  "serial_ports": [],
+  "usb_debuggers": [],
+  "sdk_paths": {
+    "esp_idf": "",
+    "android_sdk": "D:/Android-SDK",
+    "cubeide": "C:/ST/STM32CubeIDE_2.2.0/STM32CubeIDE",
+    "arm_gcc_bin": "C:\\ST\\STM32CubeIDE_2.2.0\\STM32CubeIDE\\plugins\\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.14.3.rel1.win32_1.0.100.202602081740\\tools\\bin",
+    "adb": "D:\\Android-SDK\\platform-tools\\adb.exe",
+    "java": "D:\\Android Studio（new）\\jbr\\bin\\java.exe",
+    "openocd": ""
+  },
+  "warnings": [],
+  "selection": "Select an explicit device before flashing; inventory never opens a port or modifies config.yaml"
+}

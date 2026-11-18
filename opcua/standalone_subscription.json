@@ -1,0 +1,18 @@
+{
+  "scope": "PROTOCOL_TEST_NOT_CUSTOMER_ACCEPTANCE",
+  "endpoint": "opc.tcp://127.0.0.1:4840/agent/demo",
+  "node_id": "ns=2;s=Demo.Temperature",
+  "changes": [
+    {
+      "node_id": "ns=2;s=Demo.Temperature",
+      "value": 24.5,
+      "recorded_at": "2026-11-07T08:42:50.526089+00:00"
+    },
+    {
+      "node_id": "ns=2;s=Demo.Temperature",
+      "value": 25.0,
+      "recorded_at": "2026-11-07T08:42:51.335179+00:00"
+    }
+  ],
+  "recorded_at": "2026-11-07T08:42:51.727017+00:00"
+}

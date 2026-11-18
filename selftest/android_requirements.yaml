@@ -1,0 +1,12 @@
+schema_version: 1
+project:
+  name: android-selftest
+  customer: ''
+  platform: android_app
+  requirement_baseline: 0.1.0
+requirements:
+- id: FR-001
+  title: 版本查询
+  acceptance: 发送 version 100 次均在 1 秒内返回 0.1.0，错误数为 0
+  method: hil_test
+change_requests: []

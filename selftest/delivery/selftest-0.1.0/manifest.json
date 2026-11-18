@@ -1,0 +1,66 @@
+{
+  "schema_version": 2,
+  "project": {
+    "name": "selftest",
+    "customer": "",
+    "platform": "stm32",
+    "requirement_baseline": "0.1.0",
+    "source_dir": "src",
+    "artifacts": [
+      "firmware.bin"
+    ]
+  },
+  "release_version": "0.1.0",
+  "created_at": "2026-11-10T11:49:54.219011+00:00",
+  "internal_debug_package": false,
+  "delivery_gate": "PASS",
+  "gate_blockers": [],
+  "verification_assets": {
+    "FR-001": {
+      "evidence:selftest/version_evidence.json": "verification/assets/aff9ba3d83b71615c0cf0583ecc3863ee597ef84858e1900f459ff375d944047/version_evidence.json",
+      "source:src/main.c": "verification/assets/264f56fa96228248f2b203b8db60040f9154ba1ffa0b7c118dc0acb83a56a761/main.c",
+      "source:@tree/main.c": "verification/assets/a0dcc70a06c496367cf84cac1bfe1ae66756960c64c12ad3c43a29640efd651b/main.c",
+      "artifact:firmware.bin": "verification/assets/469187b9d76cd0005ea95c58bd67b4d016def8fc7313d740fdc2ef04ca1e28cb/firmware.bin"
+    }
+  },
+  "files": [
+    {
+      "path": "payload/firmware.bin",
+      "bytes": 25,
+      "sha256": "5a154257d128f5eac4189268fe88cc2b38c4a452fa5eae521aea31d2d33cd7a9"
+    },
+    {
+      "path": "verification/assets/aff9ba3d83b71615c0cf0583ecc3863ee597ef84858e1900f459ff375d944047/version_evidence.json",
+      "bytes": 900,
+      "sha256": "241de0fb651a3bacc7d1b900ccc823d63560fcf019847d9f72736148114f6037"
+    },
+    {
+      "path": "verification/assets/264f56fa96228248f2b203b8db60040f9154ba1ffa0b7c118dc0acb83a56a761/main.c",
+      "bytes": 44,
+      "sha256": "e511fba54504d48e225c0ab3c8f2a2669e2abb2ef626ee0af162064740611659"
+    },
+    {
+      "path": "verification/assets/a0dcc70a06c496367cf84cac1bfe1ae66756960c64c12ad3c43a29640efd651b/main.c",
+      "bytes": 44,
+      "sha256": "e511fba54504d48e225c0ab3c8f2a2669e2abb2ef626ee0af162064740611659"
+    },
+    {
+      "path": "verification/assets/469187b9d76cd0005ea95c58bd67b4d016def8fc7313d740fdc2ef04ca1e28cb/firmware.bin",
+      "bytes": 25,
+      "sha256": "5a154257d128f5eac4189268fe88cc2b38c4a452fa5eae521aea31d2d33cd7a9"
+    },
+    {
+      "path": "requirements.yaml",
+      "bytes": 481,
+      "sha256": "245d2711c0f8ff8d8aee689fbd8d06864e808fc7a38ec237441376ee413ee566"
+    },
+    {
+      "path": "acceptance_results.yaml",
+      "bytes": 762,
+      "sha256": "6bf77bd6bcda2ba41122de972cd1f4531acba1f33c066ebfb73231629985adce"
+    }
+  ],
+  "total_bytes": 2281,
+  "release_notes": "",
+  "selection_policy": "EXCLUDE_SECRETS_AND_VCS_REJECT_LINKS_AND_OPAQUE_ARCHIVES"
+}

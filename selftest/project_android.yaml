@@ -1,0 +1,11 @@
+project:
+  name: android-selftest
+  version: 1.0.0
+  platform: android_app
+  requirement_spec: android_requirements.yaml
+  source_dir: ''
+hardware:
+  android_serial: emulator-5554
+build:
+  method: custom
+  gradle_task: assembleRelease

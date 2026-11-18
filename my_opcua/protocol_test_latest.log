@@ -1,0 +1,45 @@
+test_10_unauthorized_writes_are_rejected_without_changes (test_gateway.GatewayProtocolTests.test_10_unauthorized_writes_are_rejected_without_changes) ... Executing <Task pending name='Task-1' coro=<GatewayProtocolTests.asyncSetUp() running at D:\Agent\workspace\my_opcua\test_gateway.py:28> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at C:\Espressif\tools\python\Lib\asyncio\tasks.py:709> cb=[_run_until_complete_cb() at C:\Espressif\tools\python\Lib\asyncio\base_events.py:181] created at C:\Espressif\tools\python\Lib\asyncio\runners.py:100> took 1.703 seconds
+ok
+test_browse_read_and_confirmed_write_readback (test_gateway.GatewayProtocolTests.test_browse_read_and_confirmed_write_readback) ... Executing <Task pending name='Task-17' coro=<GatewayProtocolTests.asyncSetUp() running at D:\Agent\workspace\my_opcua\test_gateway.py:28> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at C:\Espressif\tools\python\Lib\asyncio\tasks.py:709> cb=[_run_until_complete_cb() at C:\Espressif\tools\python\Lib\asyncio\base_events.py:181] created at C:\Espressif\tools\python\Lib\asyncio\runners.py:100> took 3.640 seconds
+ok
+test_invalid_node_and_type_mismatch_fail (test_gateway.GatewayProtocolTests.test_invalid_node_and_type_mismatch_fail) ... Executing <Task pending name='Task-33' coro=<GatewayProtocolTests.asyncSetUp() running at D:\Agent\workspace\my_opcua\test_gateway.py:28> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at C:\Espressif\tools\python\Lib\asyncio\tasks.py:709> cb=[_run_until_complete_cb() at C:\Espressif\tools\python\Lib\asyncio\base_events.py:181] created at C:\Espressif\tools\python\Lib\asyncio\runners.py:100> took 2.156 seconds
+ok
+test_remote_endpoint_is_rejected_before_connection (test_gateway.GatewayProtocolTests.test_remote_endpoint_is_rejected_before_connection) ... Executing <Task pending name='Task-49' coro=<GatewayProtocolTests.asyncSetUp() running at D:\Agent\workspace\my_opcua\test_gateway.py:28> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at C:\Espressif\tools\python\Lib\asyncio\tasks.py:709> cb=[_run_until_complete_cb() at C:\Espressif\tools\python\Lib\asyncio\base_events.py:181] created at C:\Espressif\tools\python\Lib\asyncio\runners.py:100> took 1.765 seconds
+ok
+test_server_restart_reconnects_and_restores_subscription (test_gateway.GatewayProtocolTests.test_server_restart_reconnects_and_restores_subscription) ... Executing <Task pending name='Task-58' coro=<GatewayProtocolTests.asyncSetUp() running at D:\Agent\workspace\my_opcua\test_gateway.py:28> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at C:\Espressif\tools\python\Lib\asyncio\tasks.py:709> cb=[_run_until_complete_cb() at C:\Espressif\tools\python\Lib\asyncio\base_events.py:181] created at C:\Espressif\tools\python\Lib\asyncio\runners.py:100> took 1.765 seconds
+Executing <Task pending name='Task-63' coro=<GatewayProtocolTests.test_server_restart_reconnects_and_restores_subscription() running at D:\Agent\workspace\my_opcua\test_gateway.py:107> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at C:\Espressif\tools\python\Lib\asyncio\tasks.py:709> cb=[_run_until_complete_cb() at C:\Espressif\tools\python\Lib\asyncio\base_events.py:181] created at C:\Espressif\tools\python\Lib\asyncio\runners.py:100> took 1.890 seconds
+close_session was called but connection is closed
+close_secure_channel was called but connection is closed
+disconnect_socket was called but connection is closed
+ok
+test_subscription_receives_changes_and_releases_resources (test_gateway.GatewayProtocolTests.test_subscription_receives_changes_and_releases_resources) ... Executing <Task pending name='Task-94' coro=<GatewayProtocolTests.asyncSetUp() running at D:\Agent\workspace\my_opcua\test_gateway.py:28> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at C:\Espressif\tools\python\Lib\asyncio\tasks.py:709> cb=[_run_until_complete_cb() at C:\Espressif\tools\python\Lib\asyncio\base_events.py:181] created at C:\Espressif\tools\python\Lib\asyncio\runners.py:100> took 2.016 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 34.717s
+
+OK
+已记录 FR-001=pass: D:\Agent\workspace\my_opcua\acceptance_results.yaml
+已记录 IF-001=pass: D:\Agent\workspace\my_opcua\acceptance_results.yaml
+已记录 SAFE-001=pass: D:\Agent\workspace\my_opcua\acceptance_results.yaml
+# 需求追踪与验收报告
+
+项目: my-opcua-gateway
+平台: opc_ua
+
+| 需求 | 设计 | 代码 | 测试 | 验收 | 证据 |
+|---|---|---|---|---|---|
+| FR-001 节点浏览读取与受控写回读 | design.md | gateway.py | test_gateway.py::test_browse_read_and_confirmed_write_readback | pass | evidence/local_protocol_tests.json |
+| IF-001 订阅与服务端重启恢复 | design.md | gateway.py | test_gateway.py::test_subscription_receives_changes_and_releases_resources, test_gateway.py::test_server_restart_reconnects_and_restores_subscription | pass | evidence/local_protocol_tests.json |
+| SAFE-001 白名单与异常参数保护 | design.md | gateway.py | test_gateway.py::test_10_unauthorized_writes_are_rejected_without_changes, test_gateway.py::test_invalid_node_and_type_mismatch_fail, test_gateway.py::test_remote_endpoint_is_rejected_before_connection | pass | evidence/local_protocol_tests.json |
+| NFR-001 持续运行与资源稳定性 | design.md | gateway.py | 未执行：24小时长稳与资源曲线 | blocked | - |
+
+验收统计: {'not_run': 0, 'fail': 0, 'waived': 0, 'pass': 3, 'blocked': 1}
+交付门禁: BLOCKED
+
+## 阻塞项
+- 需求基线仍为草案，需客户评审后显式设置 baseline_status: approved
+- NFR-001 验收状态为 blocked
+
+报告: D:\Agent\workspace\my_opcua\traceability_report.md
+本地协议测试证据: D:\Agent\workspace\my_opcua\evidence\local_protocol_tests.json

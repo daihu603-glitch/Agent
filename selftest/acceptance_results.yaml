@@ -1,0 +1,17 @@
+results:
+  FR-001:
+    status: pass
+    evidence: selftest/version_evidence.json
+    notes: 离线自检模拟证据，仅测试门禁逻辑
+    tester: agent
+    recorded_at: '2026-11-10T11:49:54.164703+00:00'
+    requirement_sha256: 5b2194c25ae2120c45d6f9ca6eb2abeaa016184e44cbb101ab56423e45f03030
+    evidence_sha256:
+      selftest/version_evidence.json: 241de0fb651a3bacc7d1b900ccc823d63560fcf019847d9f72736148114f6037
+    source_sha256:
+      src/main.c: e511fba54504d48e225c0ab3c8f2a2669e2abb2ef626ee0af162064740611659
+      '@tree/main.c': e511fba54504d48e225c0ab3c8f2a2669e2abb2ef626ee0af162064740611659
+    artifact_sha256:
+      firmware.bin: 5a154257d128f5eac4189268fe88cc2b38c4a452fa5eae521aea31d2d33cd7a9
+    source_inventory:
+    - '@tree/main.c'

@@ -1,0 +1,41 @@
+{
+  "dataset": "D:\\Agent\\workspace\\selftest\\eval_smoke.yaml",
+  "created_at": "2026-11-10T11:49:54.026205+00:00",
+  "provider": "deepseek",
+  "model": "deepseek-chat",
+  "safe_tool_allowlist": [
+    "calculator",
+    "list_files",
+    "query_knowledge",
+    "read_file"
+  ],
+  "case_count": 1,
+  "passed": 0,
+  "pass_rate_all_cases": 0.0,
+  "required_pass_rate": 1.0,
+  "usage": {
+    "input_tokens": 1,
+    "output_tokens": 1
+  },
+  "aborted": "API/评测执行中止于 smoke: AGENT_ERROR: ok",
+  "results": [
+    {
+      "id": "smoke",
+      "status": "fail",
+      "agent_status": "failed",
+      "response": "AGENT_ERROR: ok",
+      "tool_calls": [],
+      "missing_keywords": [],
+      "forbidden_keywords": [],
+      "missing_tools": [],
+      "forbidden_tools_called": [],
+      "denied_tool_attempts": [],
+      "wrong_tool_results": [],
+      "failed_tool_calls": [],
+      "usage": {
+        "input_tokens": 1,
+        "output_tokens": 1
+      }
+    }
+  ]
+}

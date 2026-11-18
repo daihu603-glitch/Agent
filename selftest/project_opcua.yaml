@@ -1,0 +1,6 @@
+project:
+  name: opcua-selftest
+  version: 1.0.0
+  platform: opc_ua
+  requirement_spec: opcua_requirements.yaml
+  source_dir: ''

@@ -1,0 +1,6 @@
+min_pass_rate: 1.0
+cases:
+  - id: smoke
+    input: offline
+    expected_keywords: [ok]
+    allowed_tools: [calculator]

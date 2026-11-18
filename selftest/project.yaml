@@ -1,0 +1,10 @@
+project:
+  name: selftest
+  version: 0.1.0
+  platform: stm32
+  requirement_spec: requirements.yaml
+  source_dir: ''
+hardware:
+  serial_port: COM99
+build:
+  jobs: 4

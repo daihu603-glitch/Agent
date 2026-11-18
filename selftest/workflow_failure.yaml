@@ -1,0 +1,9 @@
+name: failure-test
+vars: {}
+steps:
+  - id: first
+    task: first task
+  - id: second
+    task: second task
+
+# changed

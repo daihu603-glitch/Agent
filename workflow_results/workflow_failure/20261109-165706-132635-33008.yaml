@@ -1,0 +1,11 @@
+workflow: D:\Agent\workspace\selftest\workflow_failure.yaml
+workflow_sha256: fc6343fd063f8489b4c43e0fdddfccab119a292d0037770ff0c8a717626d5722
+status: failed
+current_step: first
+updated_at: '2026-11-09T16:57:06.137305'
+variables:
+  api_token: '***REDACTED***'
+steps:
+  first: 'AGENT_ERROR: offline workflow failure'
+step_states:
+  first: failed

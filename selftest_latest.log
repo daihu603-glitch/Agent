@@ -1,0 +1,109 @@
+PASS 非终端输出使用 UTF-8
+PASS 工具注册数量
+PASS 多平台关键工具
+PASS 白名单仅暴露指定 schema
+PASS 执行层拒绝白名单外工具
+PASS 工作流 ai_agent_app_product.yaml
+PASS 工作流 android_app_product.yaml
+PASS 工作流 code_review.yaml
+PASS 工作流 customer_acceptance.yaml
+PASS 工作流 daily_brief.yaml
+PASS 工作流 device_app_ai_product.yaml
+PASS 工作流 esp32_dev.yaml
+PASS 工作流 esp32_product.yaml
+PASS 工作流 linux_app_product.yaml
+PASS 工作流 linux_driver_product.yaml
+PASS 工作流 model_smoke.yaml
+PASS 工作流 opc_ua_product.yaml
+PASS 工作流 regression_test.yaml
+PASS 工作流 requirements_intake.yaml
+PASS 工作流 rk3588_product.yaml
+PASS 工作流 schematic_review.yaml
+PASS 工作流 stm32_dev.yaml
+PASS 工作流 stm32_product.yaml
+PASS 模拟模型完整工具调用闭环
+PASS Agent 消息可 JSON 序列化
+PASS Agent 使用量累计
+PASS API 异常明确失败
+PASS 最大步数不等于完成
+PASS 空模型响应明确失败
+PASS OpenAI 兼容完整工具调用闭环
+PASS OpenAI 工具 schema 转换
+PASS OpenAI 多轮消息转换
+PASS OpenAI 使用量与结束原因转换
+PASS OpenAI 非法工具 JSON 明确失败
+PASS OpenAI 空 choices 明确失败
+PASS 未知模型提供商明确拒绝
+PASS api_key_env 禁止误填密钥
+PASS doctor 显示提供商且不回显密钥
+PASS 工作流失败立即中止并保存
+PASS 工作流状态脱敏与指纹
+PASS 工作流变化禁止旧状态续跑
+PASS HTTP 拒绝环回 SSRF
+PASS 注册项目根受控写入
+PASS 注册项目根读取
+PASS 项目根阻止路径逃逸
+PASS 计算器限制资源消耗
+PASS AI 智能体设计示例
+PASS AI 工具权限审计
+PASS AI 未声明高危工具拒绝
+PASS AI 控制工具必须确认
+PASS AI 评测示例校验
+PASS AI 评测禁止硬件工具
+PASS 无 Key 不执行模型评测
+PASS 多模型评测保存提供商证据
+PASS 评测 Agent 错误不能按关键词误判通过
+PASS AI 后端静态安全扫描
+PASS 安全扫描不回显秘密
+PASS APP/AI 知识库
+PASS Android 只选择本次新产物
+PASS Android 仪器测试要求明确设备
+PASS 创建需求规格
+PASS 需求输出阻止路径逃逸
+PASS 需求规格校验
+PASS 初始交付门禁阻塞
+PASS 更新追踪
+PASS 无验收仍阻塞
+PASS 记录验收
+PASS 追踪报告
+PASS 完整交付门禁
+PASS 缺失证据禁止记录 pass
+PASS notes 不能替代 pass 证据
+PASS 缺失证据文件阻塞交付
+PASS 生成交付包
+PASS 交付 ZIP 唯一
+PASS 交付包哈希验证
+PASS 交付支持含逗号 JSON 路径
+PASS 交付拒绝同名产物覆盖
+PASS 交付校验拒绝 ZIP 路径穿越
+PASS 未验收禁止打包
+PASS ESP32 分区校验
+PASS ESP32 重叠检测
+PASS HardFault 日志诊断
+PASS ESP32 日志诊断
+PASS Linux 驱动静态检查
+PASS SSH 只读白名单拒绝危险子命令
+PASS OpenOCD 固件路径 Jim 引用
+PASS OpenOCD 芯片配置不匹配拒绝
+PASS UART 未实现不会误报烧录成功
+PASS ESP32 set-target 失败禁止继续构建
+PASS 构建测试拒绝烧录旧固件
+PASS 串口等待延迟多行响应
+PASS 压力测试断线保存 ABORTED 证据
+PASS 故障采集失败仍独立 resume
+PASS 非 Git 目录不误报干净
+PASS IOC 缺失不自动替换板卡
+PASS ESP32 OTA 收集标准子目录产物
+PASS WSL 路径转换
+PASS 项目启动器变量
+PASS Android 项目启动器变量
+PASS Android 需求平台接入
+PASS OPC UA 项目入口与环境检查
+PASS OPC UA 需求平台与知识库
+PASS OPC UA 环回真实协议集成
+PASS OPC UA 未确认写入拒绝
+PASS OPC UA 白名单外写入拒绝
+PASS OPC UA 未授权远程 endpoint 拒绝
+PASS OPC UA 远程缺少固定服务器证书拒绝
+
+自检完成: 107 passed, 0 failed

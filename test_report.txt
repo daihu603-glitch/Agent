@@ -1,0 +1,4 @@
+测试完成: 1 passed, 0 failed, 共 1 条
+[PASS] 'query' → 期望含 'EXPECTED'
+       实际: first line
+second EXPECTED line

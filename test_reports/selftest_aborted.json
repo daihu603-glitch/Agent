@@ -1,0 +1,16 @@
+{
+  "command": "cycle",
+  "expect": "OK",
+  "requested_cycles": 3,
+  "port": "COM99",
+  "baudrate": 115200,
+  "started_at": "2026-11-10T19:49:54",
+  "pass": 0,
+  "fail": 0,
+  "failures": [],
+  "error": "SerialException: offline disconnect",
+  "finished_at": "2026-11-10T19:49:54",
+  "duration_seconds": 0.0,
+  "executed_cycles": 0,
+  "result": "ABORTED"
+}

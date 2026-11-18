@@ -1,0 +1,33 @@
+test_acceptance_change_invalidates_old_pass (test_improvements.ImprovementTests.test_acceptance_change_invalidates_old_pass) ... ok
+test_advisory_timeout_does_not_corrupt_completion_marker (test_improvements.ImprovementTests.test_advisory_timeout_does_not_corrupt_completion_marker) ... ok
+test_ai_init_supplies_design_and_eval_inputs (test_improvements.ImprovementTests.test_ai_init_supplies_design_and_eval_inputs) ... ok
+test_all_platform_templates_validate (test_improvements.ImprovementTests.test_all_platform_templates_validate) ... ok
+test_api_error_redacts_environment_key (test_improvements.ImprovementTests.test_api_error_redacts_environment_key) ... ok
+test_atomic_replace_failure_preserves_previous_report (test_improvements.ImprovementTests.test_atomic_replace_failure_preserves_previous_report) ... ok
+test_blocked_marker_stops_flow (test_improvements.ImprovementTests.test_blocked_marker_stops_flow) ... ok
+test_duplicate_steps_and_bad_confirm_rejected_before_execution (test_improvements.ImprovementTests.test_duplicate_steps_and_bad_confirm_rejected_before_execution) ... ok
+test_duplicate_tool_ids_rejected (test_improvements.ImprovementTests.test_duplicate_tool_ids_rejected) ... ok
+test_evidence_content_change_invalidates_pass (test_improvements.ImprovementTests.test_evidence_content_change_invalidates_pass) ... ok
+test_html_report_escapes_requirement_text (test_improvements.ImprovementTests.test_html_report_escapes_requirement_text) ... ok
+test_init_is_platform_specific_and_refuses_overwrite (test_improvements.ImprovementTests.test_init_is_platform_specific_and_refuses_overwrite) ... ok
+test_init_rejects_path_escape (test_improvements.ImprovementTests.test_init_rejects_path_escape) ... ok
+test_invalid_spec_or_result_blocks_without_crashing (test_improvements.ImprovementTests.test_invalid_spec_or_result_blocks_without_crashing) ... ok
+test_malformed_trace_is_validation_error (test_improvements.ImprovementTests.test_malformed_trace_is_validation_error) ... ok
+test_marker_quoted_earlier_cannot_override_last_line (test_improvements.ImprovementTests.test_marker_quoted_earlier_cannot_override_last_line) ... ok
+test_no_marker_is_failure (test_improvements.ImprovementTests.test_no_marker_is_failure) ... ok
+test_opcua_cannot_silently_use_servo_template (test_improvements.ImprovementTests.test_opcua_cannot_silently_use_servo_template) ... ok
+test_provider_override_does_not_reuse_other_vendor_endpoint_or_key (test_improvements.ImprovementTests.test_provider_override_does_not_reuse_other_vendor_endpoint_or_key) ... ok
+test_required_tool_cannot_be_satisfied_by_model_claim (test_improvements.ImprovementTests.test_required_tool_cannot_be_satisfied_by_model_claim) ... ok
+test_resume_changed_project_is_rejected (test_improvements.ImprovementTests.test_resume_changed_project_is_rejected) ... ok
+test_resume_identical_variables_skips_completed (test_improvements.ImprovementTests.test_resume_identical_variables_skips_completed) ... ok
+test_resume_requires_redacted_variables (test_improvements.ImprovementTests.test_resume_requires_redacted_variables) ... ok
+test_smoke_missing_key_writes_blocked_without_network (test_improvements.ImprovementTests.test_smoke_missing_key_writes_blocked_without_network) ... ok
+test_state_is_versioned_and_keeps_token_counts (test_improvements.ImprovementTests.test_state_is_versioned_and_keeps_token_counts) ... ok
+test_template_draft_cannot_pass_delivery (test_improvements.ImprovementTests.test_template_draft_cannot_pass_delivery) ... ok
+test_truncated_tool_response_never_executes (test_improvements.ImprovementTests.test_truncated_tool_response_never_executes) ... ok
+test_updating_trace_does_not_invalidate_acceptance (test_improvements.ImprovementTests.test_updating_trace_does_not_invalidate_acceptance) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.394s
+
+OK

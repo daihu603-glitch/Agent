@@ -1,0 +1,27 @@
+workflow: D:\Agent\workflows\opc_ua_product.yaml
+workflow_sha256: 25219ad11008c779a2f7f7c3947c6b6765753ce78b720fbe47bf20b71b583851
+status: failed
+current_step: baseline
+updated_at: '2026-11-07T17:31:55.090905'
+variables:
+  spec_path: D:\Agent\workspace\my_opcua\requirements.yaml
+  project_dir: D:\Agent\workspace\my_opcua
+  version: 0.1.0
+  serial_port: ''
+  target: ''
+  use_wsl: 'false'
+  jobs: '4'
+  android_serial: ''
+  build_method: auto
+  gradle_task: assembleDebug
+  agent_design: D:\Agent\workspace\my_opcua\agent_design.yaml
+  eval_dataset: D:\Agent\workspace\my_opcua\agent_eval.yaml
+  backend_dir: D:\Agent\workspace\my_opcua
+  firmware_dir: D:\Agent\workspace\my_opcua
+  android_dir: D:\Agent\workspace\my_opcua
+steps:
+  baseline: 'AGENT_ERROR: AuthenticationError: Error code: 401 - {''type'': ''error'',
+    ''error'': {''type'': ''authentication_error'', ''message'': ''invalid x-api-key''},
+    ''request_id'': ''req_011CgoLRW6cvk2GYu2L2ihoW''}'
+step_states:
+  baseline: failed
